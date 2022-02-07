@@ -1,0 +1,28 @@
+n = int(input('Inserir numero para gerar a sequência de Fibonnaci :'))
+
+u1 = 1
+u2 = 1
+count = 0
+
+lista = [0,1,1]
+
+for vic in range(0, n):
+    count = u1 + u2
+    u1 = count
+    u2 = (count - u2)
+    lista.append(count)
+
+
+def f_prime(n):
+    for i in range(2, n // 2 + 1):
+        if (n % i == 0):
+            return (0)
+    return (1)
+
+
+l = list(lista)
+n_l = []
+for i in l:
+    if (f_prime(i)):
+        n_l.append(i)
+print("Prime number list is:", *n_l) 
